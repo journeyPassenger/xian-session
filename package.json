@@ -40,7 +40,8 @@
     "autod": "autod",
     "commits": "./scripts/commits.sh",
     "clean": "grunt clean",
-    "build": "grunt"
+    "build": "grunt",
+    "test": "ava"
   },
   "homepage": "https://github.com/journeyPassenger/xian-session",
   "repository": {
