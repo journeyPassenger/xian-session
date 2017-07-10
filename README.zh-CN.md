@@ -14,8 +14,8 @@
 [npm-url]: https://npmjs.org/package/egg
 [quality-image]: http://npm.packagequality.com/shield/egg.svg?style=flat-square
 [quality-url]: http://packagequality.com/#?package=egg
-[travis-image]: https://img.shields.io/travis/eggjs/egg.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eggjs/egg
+[travis-image]: https://travis-ci.org/journeyPassenger/xian-session.svg?branch=master
+[travis-url]: https://travis-ci.org/journeyPassenger/xian-session
 [codecov-image]: https://img.shields.io/codecov/c/github/eggjs/egg.svg?style=flat-square
 [codecov-url]: https://codecov.io/gh/eggjs/egg
 [david-image]: https://img.shields.io/david/eggjs/egg.svg?style=flat-square
