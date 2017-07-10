@@ -1,17 +1,12 @@
 {
   "name": "xian-session",
-  "version": "1.4.0",
-  "description": "A web framework's framework for Node.js",
+  "version": "0.0.1",
+  "description": "session",
   "keywords": [
-    "web",
-    "app",
-    "http",
-    "application",
-    "framework",
-    "middleware",
-    "koa",
+    "xian62",
     "xian-session"
   ],
+  "main": "lib/xian-session.min.js",
   "dependencies": {
     "underscore": "^1.8.3"
   },
@@ -31,7 +26,6 @@
     "grunt-babel": "^6.0.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "load-grunt-tasks": "^3.5.2",
@@ -42,11 +36,7 @@
     "supertest": "^3.0.0"
   },
   "files": [
-    "app",
-    "config",
-    "bin",
-    "lib",
-    "index.js"
+    "src"
   ],
   "scripts": {
     "lint": "eslint app config lib test *.js",
@@ -58,7 +48,9 @@
     "doc-build": "doctools build",
     "doc-deploy": "doctools deploy",
     "autod": "autod",
-    "commits": "./scripts/commits.sh"
+    "commits": "./scripts/commits.sh",
+    "clean": "grunt clean",
+    "build": "grunt"
   },
   "homepage": "https://github.com/eggjs/egg",
   "repository": {

@@ -8,8 +8,8 @@ module.exports = function (grunt) {
         banner: '/*! <%= pkg.name %>  created by alex  at <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: '.tmp/app.js',
-        dest: 'dest/<%= pkg.name %>.min.js'
+        src: '.tmp/concat/bundle.js',
+        dest: 'lib/<%= pkg.name %>.min.js'
       }
     },
     concat: {
@@ -18,24 +18,16 @@ module.exports = function (grunt) {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
       },
       dev: {
-        src: ['lib/*.js'],
+        src: ['src/*.js'],
         dest: '.tmp/bundle.js'
       },
       dist: {
-        src: ['lib/core.js'],
-        dest: '.tmp/bundle.js'
-      }
-    },
-    jshint: {
-      files: ['lib/**.js'],
-      options: {
-        globals: {
-          jQuery: true
-        }
+        src: ['.tmp/babel/*.js'],
+        dest: '.tmp/concat/bundle.js'
       }
     },
     watch: {
-      files: ['lib/*.js'],
+      files: ['src/*.js'],
       tasks: ['concat', 'babel', 'uglify'],
       express: {
         files: [ '**/*.js' ],
@@ -45,7 +37,7 @@ module.exports = function (grunt) {
         }
       },
       dev: {
-        files: ['lib/*.js'],
+        files: ['src/*.js'],
         tasks: ['concat']
       }
     },
@@ -55,34 +47,22 @@ module.exports = function (grunt) {
         presets: ['babel-preset-es2015']
       },
       dist: {
-        files: {
-          '.tmp/app.js': '.tmp/bundle.js'
-        }
+        files: [{
+          'expand': true,
+          'cwd': 'src/',
+          'src': ['*.js'],
+          'dest': '.tmp/babel',
+          'ext': '.js'
+        }]
       }
     },
-    clean: ['.tmp'],
-    express: {
-      options: {
-        port: 8080
-      },
-      dev: {
-        options: {
-          script: 'path/server.js'
-        }
-      }
-    }
+    clean: ['.tmp']
   })
     // 加载提供"uglify"任务的插件
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-contrib-jshint')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-express-server')
     // 默认任务
-  grunt.registerTask('default', ['concat:dist', 'babel', 'clean', 'uglify'])
-  grunt.registerTask('develop', ['concat:dev', 'watch:dev'])
-  grunt.registerTask('dev', ['express', 'watch'])
-  grunt.registerTask('server', [ 'express:dev', 'watch' ])
-  grunt.registerTask('dep', ['concat:dep'])
+  grunt.registerTask('default', ['babel', 'concat:dist', 'uglify', 'clean'])
 }

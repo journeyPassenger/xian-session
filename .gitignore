@@ -21,4 +21,4 @@ docs/**/contributing.md
 docs/public
 docs/plugins.png
 
-!test/fixtures/apps/loader-plugin/node_modules
+.tmp
