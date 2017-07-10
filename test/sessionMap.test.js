@@ -24,12 +24,12 @@ test('sessionMap find', t => {
   t.deepEqual(sMp.find('n', 1)[0], initValue)
 })
 
-test('sessionMap getKey', t => {
-  t.is(sMp.getKey('a.obj.s'), 'alex')
+test('sessionMap getValue', t => {
+  t.is(sMp.getValue('a.obj.s'), 'alex')
 })
 
 test('sessionMap update', t => {
   sMp.update('a.obj.s', 'erdun')
 
-  t.is(sMp.getKey('a.obj.s'), 'erdun')
+  t.is(sMp.getValue('a.obj.s'), 'erdun')
 })

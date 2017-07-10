@@ -60,7 +60,7 @@ class SessionMap extends Map {
 
     return _result
   }
-  getKey (key = '') {
+  getValue (key = '') {
     const keys = key.split('.')
     const _key = keys.shift()
 

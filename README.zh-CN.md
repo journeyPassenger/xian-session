@@ -28,44 +28,26 @@
 ## 安装
 
 ```bash
-$ npm install egg --save
-```
-
-支持 Node.js 6.x 以上版本。
-
-## 特性
-
-- ✔︎ 内置多进程管理
-- ✔︎ 高度可扩展的插件机制
-- ✔︎ 深度框架定制
-- ✔︎ 丰富的[插件](https://eggjs.org/badgeboard/)
-
-## 文档和社区
-
-- [官方站点 && 文档](https://eggjs.org/zh-cn/)
-- [插件列表](https://github.com/search?q=topic%3Aegg-plugin&type=Repositories)
-- [框架列表](https://github.com/search?q=topic%3Aegg-framework&type=Repositories)
-- [插件依赖图](http://uml.mvnsearch.org/github/eggjs/egg/blob/master/docs/plugins.puml)
-
-## 快速开始
-
-```bash
-$ npm install egg-init -g
-$ egg-init --type simple showcase && cd showcase
-$ npm install
-$ npm run dev
-$ open http://localhost:7001
+$ npm install xian-session --save
 ```
 
 ## 示例
 
-参见 [egg-examples](https://github.com/eggjs/examples)。
+```js
+import session from 'xian-session'
 
-## 贡献代码
+const initValue = {
+    n: 1,
+    s: 'string',
+    obj: {
+        n: 1,
+        s: 'alex'
+    }
+}
+const session.set('init', initValue)
 
-Please let us know what we can help, check [issues](https://github.com/eggjs/egg/issues) for bug reporting and suggestion.
-
-If you are a contributor, follow [CONTRIBUTING](CONTRIBUTING.md).
+session.getValue('init.obj.n') // 1
+```
 
 ## 开源协议
 
