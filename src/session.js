@@ -1,7 +1,6 @@
 import _ from 'underscore'
 
-import SMap from './seseeionMap'
-import { logger } from '../'
+import SMap from './sessionMap.js'
 
 /**
  * 功能连接20分钟内未操作，则关闭连接，单个账户最大并发为5
@@ -12,6 +11,7 @@ export default class Session {
     this.timeout = 20 * 60 * 1000 || config.timeout
     this.session = new SMap()
     this.interval = 5 * 60 * 1000 || config.interval
+    this.error = config.logger || console.error
   }
   add (_key, value = {}) {
     const nowLen = this.session.size
@@ -22,7 +22,7 @@ export default class Session {
     }, value)
 
     if (nowLen > this.max) {
-      logger.errorCom.insert({
+      this.error({
         action: 'session 超过最大限制'
       })
     }
@@ -30,7 +30,7 @@ export default class Session {
     try {
       this.session.set(_key, _value)
     } catch (e) {
-      logger.errorCom.insert({
+      this.error({
         action: 'session 插入失败',
         data: e
       })
@@ -42,7 +42,7 @@ export default class Session {
       this.session.update(_key, value)
       this.session.update(`${id}.outDate`, this._outDate())
     } catch (e) {
-      logger.errorCom.insert({
+      this.error({
         action: 'session 更新失败',
         data: e
       })

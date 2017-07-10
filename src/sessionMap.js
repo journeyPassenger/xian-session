@@ -1,4 +1,6 @@
-export default class extends Map {
+import _ from 'underscore'
+
+class SessionMap extends Map {
   constructor (props) {
     super(props)
   }
@@ -58,4 +60,33 @@ export default class extends Map {
 
     return _result
   }
+  getKey (key = '') {
+    const keys = key.split('.')
+    const _key = keys.shift()
+
+    if (!keys.length) {
+      return super.get.call(this, _key)
+    } else {
+      return this._getValue(key)
+    }
+  }
+  _getValue (key, parent, notFirst) {
+    const keys = key.split('.')
+    const self = this
+
+    try {
+      const _key = keys.shift()
+      const _keyValue = notFirst ? parent[_key] : self.get(_key)
+
+      if (keys.length) {
+        return self._getValue(keys.join('.'), _keyValue, true)
+      } else {
+        return _keyValue
+      }
+    } catch (e) {
+      return null
+    }
+  }
 }
+
+export default SessionMap

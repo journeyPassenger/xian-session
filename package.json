@@ -12,35 +12,25 @@
   },
   "devDependencies": {
     "autod": "^2.8.0",
-    "autod-egg": "^1.0.0",
+    "ava": "^0.20.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "coffee": "^3.3.2",
-    "eslint": "^3.19.0",
-    "eslint-config-egg": "^4.2.0",
-    "findlinks": "^1.1.0",
-    "formstream": "^1.1.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2016": "^6.24.1",
     "glob": "^7.1.2",
-    "grunt-cli": "^1.2.0",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0",
     "load-grunt-tasks": "^3.5.2",
-    "pedding": "^1.1.0",
-    "runscript": "^1.2.1",
-    "spy": "^1.0.0",
-    "standard": "^10.0.2",
-    "supertest": "^3.0.0"
+    "standard": "^10.0.2"
   },
   "files": [
     "src"
   ],
   "scripts": {
     "lint": "eslint app config lib test *.js",
-    "test": "npm run lint -- --fix && npm run test-local",
+    "test": "ava",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov --timeout 100000",
     "ci": "npm run lint && npm run cov",
@@ -52,13 +42,28 @@
     "clean": "grunt clean",
     "build": "grunt"
   },
-  "homepage": "https://github.com/eggjs/egg",
+  "homepage": "https://github.com/journeyPassenger/xian-session",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eggjs/egg.git"
+    "url": "https://github.com/journeyPassenger/xian-session.git"
   },
   "engines": {
     "node": ">= 6.0.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.test.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "verbose": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
   },
   "license": "MIT"
 }
