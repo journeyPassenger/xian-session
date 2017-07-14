@@ -1,3 +1,3 @@
 import Session from './session.js'
 
-export default Session
+export default new Session()

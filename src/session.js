@@ -12,6 +12,11 @@ export default class Session {
     this.session = new SMap()
     this.interval = 5 * 60 * 1000 || config.interval
     this.error = config.logger || console.error
+
+    return this
+  }
+  get (_key) {
+    return this.session.getValue(_key)
   }
   add (_key, value = {}) {
     const nowLen = this.session.size
@@ -35,6 +40,8 @@ export default class Session {
         data: e
       })
     }
+
+    return this
   }
   update (_key, value) {
     try {
@@ -47,9 +54,13 @@ export default class Session {
         data: e
       })
     }
+
+    return this
   }
   remove (id) {
     this.session.delete(id)
+
+    return this
   }
   find (_key, value) {
     return this.session.find(_key, value)

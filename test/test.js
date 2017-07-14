@@ -1,6 +1,5 @@
-const Session = require('../lib/sessionMap.js')
+const session = require('../lib/')
 
-const sMp = new Session()
 const initValue = {
   n: 1,
   obj: {
@@ -8,11 +7,9 @@ const initValue = {
     n: 2
   },
   arr: [1, 2, 3, 4],
-  bb: 'bb'
+  name: 'bb'
 }
-sMp.update('a', initValue)
-sMp.update('b', 11)
 
-var a = sMp.find('n', 1)
+session.update('a', initValue)
 
-console.log(sMp.getKey('a.n'))
+console.log(session.get('a.n'))
