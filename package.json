@@ -1,6 +1,6 @@
 {
   "name": "xian-session",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "session",
   "keywords": [
     "xian62",
@@ -40,8 +40,7 @@
     "autod": "autod",
     "commits": "./scripts/commits.sh",
     "clean": "grunt clean",
-    "build": "grunt",
-    "test": "ava"
+    "build": "grunt"
   },
   "homepage": "https://github.com/xian62/xian-session",
   "repository": {
