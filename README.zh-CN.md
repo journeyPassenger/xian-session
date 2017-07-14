@@ -1,16 +1,13 @@
-![](https://raw.githubusercontent.com/eggjs/egg/master/docs/assets/egg-logo.png)
+session used for xian62
 
-为企业级框架和应用而生的 Web 框架
-
-[![NPM version][npm-image]][npm-url]
-[![NPM quality][quality-image]][quality-url]
+<!-- [![NPM version][npm-image]][npm-url] -->
+<!-- [![NPM quality][quality-image]][quality-url] -->
 [![build status][travis-image]][travis-url]
-[![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
-[![npm download][download-image]][download-url]
+<!-- [![Test coverage][codecov-image]][codecov-url] -->
+<!-- [![David deps][david-image]][david-url] -->
+<!-- [![Known Vulnerabilities][snyk-image]][snyk-url] -->
+<!-- [![npm download][download-image]][download-url] -->
 
-[npm-image]: https://img.shields.io/npm/v/egg.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/egg
 [quality-image]: http://npm.packagequality.com/shield/egg.svg?style=flat-square
 [quality-url]: http://packagequality.com/#?package=egg
