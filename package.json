@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "lint": "eslint app config lib test *.js",
-    "test": "ava",
+    "test": "npm run build && ava",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov --timeout 100000",
     "ci": "npm run lint && npm run cov",
