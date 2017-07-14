@@ -6,8 +6,7 @@ import SMap from './sessionMap.js'
  * 功能连接20分钟内未操作，则关闭连接，单个账户最大并发为5
  */
 export default class Session {
-  constructor (config) {
-    config = config || {}
+  constructor (config = {}) {
     this.max = 1000 || config.max
     this.timeout = 20 * 60 * 1000 || config.timeout
     this.session = new SMap()
@@ -19,8 +18,7 @@ export default class Session {
   get (_key) {
     return this.session.getValue(_key)
   }
-  add (_key, value) {
-    value = value || {}
+  add (_key, value = {}) {
     const nowLen = this.session.size
     const _value = Object.assign({
       createdAt: new Date(),

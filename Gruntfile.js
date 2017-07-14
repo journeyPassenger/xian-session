@@ -10,7 +10,8 @@ module.exports = function (grunt) {
         plugins: [
           'transform-export-extensions',
           'babel-plugin-add-module-exports',
-          'transform-es2015-modules-commonjs'
+          'transform-es2015-modules-commonjs',
+          'transform-es2015-parameters'
         ]
       },
       dist: {
