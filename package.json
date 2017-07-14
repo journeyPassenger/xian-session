@@ -26,7 +26,7 @@
     "standard": "^10.0.2"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "scripts": {
     "lint": "eslint app config lib test *.js",
@@ -43,10 +43,10 @@
     "build": "grunt",
     "test": "ava"
   },
-  "homepage": "https://github.com/journeyPassenger/xian-session",
+  "homepage": "https://github.com/xian62/xian-session",
   "repository": {
     "type": "git",
-    "url": "https://github.com/journeyPassenger/xian-session.git"
+    "url": "https://github.com/xian62/xian-session.git"
   },
   "engines": {
     "node": ">= 6.0.0"
