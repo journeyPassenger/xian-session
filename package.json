@@ -6,7 +6,7 @@
     "xian62",
     "xian-session"
   ],
-  "main": "lib/xian-session.min.js",
+  "main": "lib/index.js",
   "dependencies": {
     "underscore": "^1.8.3"
   },
