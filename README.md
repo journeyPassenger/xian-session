@@ -1,4 +1,4 @@
-session used for xian62
+ssion used for xian62
 
 <!-- [![NPM version][npm-image]][npm-url] -->
 <!-- [![NPM quality][quality-image]][quality-url] -->
